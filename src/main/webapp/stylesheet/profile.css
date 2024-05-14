@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 70px;
+  background: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+nav .logo img {
+  width: 150px;
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  cursor: pointer;
+}
+
+nav ul li {
+  font-size: 16px;
+  transition: all ease-in-out 0.6s;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  font-weight: 600;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.6s ease;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+.shortcuts {
+	display: flex;
+	gap: 30px;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+}
+
+.shortcuts a{
+  
+  color: black;
+ 
+  font-weight: 600;
+  cursor:pointer;
+}
+
+
+.buttons button {
+  position: relative;
+  background-color: transparent;
+  border: 2px solid #000;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  overflow: hidden;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.buttons button::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: #000;
+  left: 0;
+  top: 0;
+  transition: width 0.5s ease; /* Only transition width property */
+  z-index: -1;
+}
+
+.buttons button:hover::before {
+  width: 100%;
+  border: 2px solid #000;
+}
+
+.buttons button:hover {
+  border: none;
+
+  a {
+    color: #fff;
+  }
+}
+
+.profile {
+  display: flex;
+  padding: 4rem 8rem;
+  align-items: center;
+  border-radius: 6px;
+  width: fit-content;
+  margin: 2rem 4rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-left: none;
+}
+
+.profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgb(4, 54, 140);
+}
+
+.p_side {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.edit {
+  height: 20px;
+  align-self: start;
+  margin-top: 35px;
+  cursor: pointer;
+}
+
+.recent_purchase {
+  padding: 0 4rem;
+
+  margin: 0 1rem;
+  width: 50%;
+}
+
+.detail p {
+  line-height: 36px;
+}
+
+.one_detail span {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+.one_detail span:nth-child(1) {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.r_purchase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.v_btn {
+  padding: 0.5rem;
+  background: black;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  border: none;
+}
+
+.v_btn:hover {
+  font-size: 14px;
+}
+
+/* Overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: 1050; /* High z-index to be on top */
+    display: none; /* Hidden by default */
+}
+
+/* Popup styles */
+.popup {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* Subtle shadow */
+    z-index: 1100; /* Even higher z-index */
+    display: none; /* Hidden by default */
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Maximum width */
+}
+
+.popup-content {
+    position: relative;
+    color: #333; /* Dark text for readability */
+    padding: 30px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.popup-content h2 {
+    color: #333; /* Header color */
+    margin-bottom: 20px;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.popup-content input,
+.popup-content button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.popup-content button {
+    background-color: #0056b3; /* Button color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup-content button:hover {
+    background-color: #003580; /* Darken button on hover */
+}

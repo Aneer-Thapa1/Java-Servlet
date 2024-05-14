@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+@import
+	url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap")
+	;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+nav {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100vw;
+	height: 70px;
+	background: #fff;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo img {
+	width: 160px;
+	height: 50px;
+}
+
+nav ul {
+	display: flex;
+	gap: 30px;
+	list-style: none;
+	cursor: pointer;
+}
+
+nav ul li {
+	font-size: 16px;
+	transition: all ease-in-out 0.6s;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: black;
+	position: relative;
+	font-weight: 600;
+}
+
+nav ul li a::after {
+	content: "";
+	width: 100%;
+	height: 3px;
+	background-color: black;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	transform: scaleX(0);
+	transition: transform 0.6s ease;
+}
+
+nav ul li a:hover::after {
+	transform: scaleX(1);
+}
+
+.buttons {
+	display: flex;
+	gap: 20px;
+}
+
+.buttons button {
+	position: relative;
+	background-color: transparent;
+	border: 2px solid #000;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	overflow: hidden; a { text-decoration : none;
+	color: #000;
+}
+
+}
+.buttons button::before {
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 100%;
+	background: #000;
+	left: 0;
+	top: 0;
+	transition: width 0.5s ease; /* Only transition width property */
+	z-index: -1;
+}
+
+.buttons button:hover::before {
+	width: 100%;
+	border: 2px solid #000;
+}
+
+.buttons button:hover {
+	border: none;
+	a
+	{
+	color
+	:
+	#fff;
+}
+
+}
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+	color: #333;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.content {
+	margin-top: 50px;
+}
+
+h1 {
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+th, td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: #f2f2f2;
+	color: #333;
+}
+
+tr:nth-child(even) {
+	background-color: #fff;
+}
+
+.edit-btn, .delete-btn {
+	color: #333;
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+	color: #000;
+}
+
+/* Overlay styles */
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+	z-index: 990; /* High z-index to be on top */
+	display: none; /* Hidden by default */
+}
+
+/* Add this CSS to your existing styles */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+  width: 100vw;
+  max-width: 1200px;
+}
+
+/* Ensures the popup content is well styled */
+.popup-content {
+    position: relative;
+    padding: 20px;
+}
+
+/* Controls the layout of rows in the form */
+.form-row {
+    display: flex;
+    justify-content: space-between; /* Distributes space between the form groups */
+    flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+    margin-bottom: 20px; /* Adds space between rows */
+}
+
+/* Styling for individual form groups */
+.form-group {
+    flex-basis: calc(33% - 20px); /* Takes roughly a third of the space minus some margin */
+    margin: 10px; /* Adds some space around each form group */
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%; /* Ensures inputs take up the full width of their container */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 80px; /* Fixes the height of textareas */
+}
+
+
+
+footer {
+	background: #000;
+	margin-top: 50px;
+	height: 300px;
+	display: flex;
+	justify-content: space-around;
+	gap: 90px;
+	align-items: center;
+}
+
+footer img {
+	width: 150px;
+	height: 60px;
+}
+
+footer ul {
+	display: flex;
+	gap: 30px;
+	list-style: none;
+}
+
+footer ul li a {
+	font-size: 16px;
+	transition: all ease-in-out 0.6s;
+	text-decoration: none;
+	color: #fff;
+}
+
+footer .icons {
+	color: #fff;
+	font-size: 24px;
+	gap: 30px;
+	display: flex;
+	cursor: pointer;
+}
+
+footer .right {
+	display: flex;
+	height: 300px;
+	width: 200px;
+}
+
+footer .text {
+	display: flex;
+	flex-wrap: wrap;
+}
